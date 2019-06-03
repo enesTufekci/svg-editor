@@ -24,7 +24,10 @@ const FileList: React.FC<{
     onFileChange(filename)
   }
   return (
-    <Menu selectedKeys={[file]} style={{ minHeight: '100vh' }}>
+    <Menu
+      selectedKeys={[file]}
+      style={{ height: '100vh', maxHeight: '100vh', overflow: 'scroll' }}
+    >
       {files.map(file => (
         <Menu.Item onClick={handleSelectFile(file)} key={file}>
           {file}

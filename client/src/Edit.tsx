@@ -66,16 +66,18 @@ const Edit: React.FC<{
           </Button>
         </Col>
       </Row>
-      <Editor
-        value={content}
-        onValueChange={handleContentChange}
-        highlight={(code: string) => highlight(code, languages.js)}
-        padding={10}
-        style={{
-          fontFamily: '"Fira code", "Fira Mono", monospace',
-          fontSize: 12
-        }}
-      />
+      <div style={{ maxHeight: 'calc(100vh - 100px)', overflow: 'scroll' }}>
+        <Editor
+          value={content}
+          onValueChange={handleContentChange}
+          highlight={(code: string) => highlight(code, languages.js)}
+          padding={10}
+          style={{
+            fontFamily: '"Fira code", "Fira Mono", monospace',
+            fontSize: 12
+          }}
+        />
+      </div>
     </div>
   )
 }
